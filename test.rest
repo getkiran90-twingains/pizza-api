@@ -11,3 +11,22 @@ Content-Type: application/json
 
 ### Get all orders
 GET http://localhost:3000/api/orders
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{ "size": "large", "quantity": 1 }
+
+### Invalid size (should 400)
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{ "customerName": "Test", "size": "gigantic", "quantity": 1 }
+
+### Invalid toppings type (should 400)
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{ "customerName": "Test", "size": "small", "quantity": 1, "toppings": 123 }
+
+### Unknown ID (should 404)
+GET http://localhost:3000/api/orders/00000000-0000-0000-0000-000000000000
