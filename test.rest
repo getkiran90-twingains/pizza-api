@@ -1,0 +1,13 @@
+### Add order
+POST http://localhost:3000/api/orders
+Content-Type: application/json
+
+{
+  "customerName": "Kiran Raj",
+  "size": "large",
+  "toppings": ["pepperoni", "mushroom"],
+  "quantity": 2
+}
+
+### Get all orders
+GET http://localhost:3000/api/orders
